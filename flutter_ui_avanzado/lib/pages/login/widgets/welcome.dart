@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_ui_avanzado/utils/responsive.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive.of(context);
+
     return AspectRatio(
       aspectRatio: 16 / 10,
       child: LayoutBuilder(builder: (_, context) {
@@ -22,7 +25,16 @@ class Welcome extends StatelessWidget {
                       width: context.maxWidth,
                       color: Color(0xffeeeeee),
                     ),
-                    Text("Welcome Back!")
+                    SizedBox(
+                      height: 13,
+                    ),
+                    Text(
+                      "Welcome Back!",
+                      style: TextStyle(
+                        fontSize: responsive.ip(2.5),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -44,11 +56,11 @@ class Welcome extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: context.maxHeight * 0.245,
+                top: context.maxHeight * 0.25,
                 right: 5,
                 child: SvgPicture.asset(
                   'assets/pages/login/men.svg',
-                  width: context.maxWidth * .18,
+                  width: context.maxWidth * .20,
                 ),
               ),
             ],
