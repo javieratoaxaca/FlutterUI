@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ui_avanzado/pages/login/widgets/login_form.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/welcome.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,7 +24,11 @@ class _LoginPageState extends State<LoginPage> {
         width: double.infinity,
         height: double.infinity,
         child: Column(
-          children: [Welcome()],
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Welcome(),
+            LoginForm(),
+          ],
         ),
       ),
     );
