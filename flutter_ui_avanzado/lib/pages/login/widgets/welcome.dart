@@ -33,6 +33,7 @@ class Welcome extends StatelessWidget {
                       style: TextStyle(
                         fontSize: responsive.ip(2.5),
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'raleway',
                       ),
                     ),
                   ],

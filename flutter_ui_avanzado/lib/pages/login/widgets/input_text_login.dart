@@ -22,6 +22,13 @@ class InputTextLogin extends StatelessWidget {
         ),
       ),
       placeholder: this.placeholder,
+      style: TextStyle(
+        fontFamily: 'sans',
+      ),
+      placeholderStyle: TextStyle(
+        fontFamily: 'sans',
+        color: Color(0xffcccccc),
+      ),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
