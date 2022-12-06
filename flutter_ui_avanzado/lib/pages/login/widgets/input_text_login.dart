@@ -13,8 +13,8 @@ class InputTextLogin extends StatelessWidget {
     return CupertinoTextField(
       padding: EdgeInsets.symmetric(vertical: 7, horizontal: 5),
       prefix: Container(
-        width: 40,
-        height: 30,
+        width: 30,
+        height: 20,
         padding: EdgeInsets.all(2),
         child: SvgPicture.asset(
           this.iconPath,

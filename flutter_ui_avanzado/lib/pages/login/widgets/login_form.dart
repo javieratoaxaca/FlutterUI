@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/input_text_login.dart';
+import 'package:flutter_ui_avanzado/widgets/rounded_button.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -12,6 +13,7 @@ class LoginForm extends StatelessWidget {
         color: Colors.red,
         width: 300,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             /* CupertinoTextField(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -37,13 +39,35 @@ class LoginForm extends StatelessWidget {
                 iconPath: 'assets/pages/login/icons/email.svg',
                 placeholder: "Email Address"),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             InputTextLogin(
                 iconPath: 'assets/pages/login/icons/key.svg',
                 placeholder: "Password"),
             SizedBox(
-              height: 200,
+              height: 10,
+            ),
+            Container(
+              width: double.infinity,
+              alignment: Alignment.centerRight,
+              child: CupertinoButton(
+                padding: EdgeInsets.symmetric(vertical: 13),
+                child: Text(
+                  'Forgot Password',
+                  style: TextStyle(fontFamily: 'sans'),
+                ),
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            RoundedButton(
+              label: "Sing In",
+              onPressed: () {},
+            ),
+            SizedBox(
+              height: 150,
             )
           ],
         ));
