@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/input_text_login.dart';
+import 'package:flutter_ui_avanzado/utils/app_colors.dart';
+import 'package:flutter_ui_avanzado/widgets/circle_button.dart';
 import 'package:flutter_ui_avanzado/widgets/rounded_button.dart';
 
 class LoginForm extends StatelessWidget {
@@ -10,8 +12,8 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.red,
-        width: 300,
+        //color: Colors.red,
+        width: 250,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -65,9 +67,38 @@ class LoginForm extends StatelessWidget {
             RoundedButton(
               label: "Sing In",
               onPressed: () {},
+              //backgroundColor: AppColors.primaryColor, // Colors.red, //
             ),
             SizedBox(
-              height: 150,
+              height: 20,
+            ),
+            Text(
+              'Or continue with',
+              style: TextStyle(fontFamily: 'sans', fontSize: 12),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleButton(
+                  size: 45,
+                  backgroundColor: Color(0xff448AFF),
+                  iconPath: 'assets/pages/login/icons/Facebook.svg',
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                CircleButton(
+                  size: 45,
+                  backgroundColor: Color(0xffFF1744),
+                  iconPath: 'assets/pages/login/icons/google_plus.svg',
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 80,
             )
           ],
         ));
