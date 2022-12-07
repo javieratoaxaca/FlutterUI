@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/login_form.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/welcome.dart';
 import 'package:flutter_ui_avanzado/utils/responsive.dart';
+import 'package:after_layout/after_layout.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,11 +12,19 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with AfterLayoutMixin {
   @override
   void initState() {
     super.initState();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+  }
+
+  @override
+  void afterFirstLayout(BuildContext context) {
+    final bool isTablet = MediaQuery.of(context).size.shortestSide >= 600;
+    if (!isTablet) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }
   }
 
   @override
