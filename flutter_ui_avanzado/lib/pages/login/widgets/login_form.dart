@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/input_text_login.dart';
 import 'package:flutter_ui_avanzado/utils/app_colors.dart';
+import 'package:flutter_ui_avanzado/utils/responsive.dart';
 import 'package:flutter_ui_avanzado/widgets/circle_button.dart';
 import 'package:flutter_ui_avanzado/widgets/rounded_button.dart';
 
@@ -10,11 +11,12 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive.of(context);
     return SafeArea(
       top: false,
       child: Container(
           //color: Colors.red,
-          width: 250,
+          width: 300,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -42,14 +44,11 @@ class LoginForm extends StatelessWidget {
                   iconPath: 'assets/pages/login/icons/email.svg',
                   placeholder: "Email Address"),
               SizedBox(
-                height: 15,
+                height: responsive.ip(2),
               ),
               InputTextLogin(
                   iconPath: 'assets/pages/login/icons/key.svg',
                   placeholder: "Password"),
-              SizedBox(
-                height: 10,
-              ),
               Container(
                 width: double.infinity,
                 alignment: Alignment.centerRight,
@@ -63,7 +62,7 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: responsive.ip(2.7),
               ),
               RoundedButton(
                 label: "Sing In",
@@ -71,14 +70,14 @@ class LoginForm extends StatelessWidget {
                 //backgroundColor: AppColors.primaryColor, // Colors.red, //
               ),
               SizedBox(
-                height: 20,
+                height: responsive.ip(3.2),
               ),
               Text(
                 'Or continue with',
                 style: TextStyle(fontFamily: 'sans', fontSize: 12),
               ),
               SizedBox(
-                height: 10,
+                height: responsive.ip(1.7),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +98,7 @@ class LoginForm extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: responsive.ip(2.7),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

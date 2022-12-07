@@ -26,7 +26,7 @@ class Welcome extends StatelessWidget {
                       color: Color(0xffeeeeee),
                     ),
                     SizedBox(
-                      height: 13,
+                      height: 60,
                     ),
                     Text(
                       "Welcome Back!",
