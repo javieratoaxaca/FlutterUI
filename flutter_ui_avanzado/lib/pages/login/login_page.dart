@@ -30,6 +30,13 @@ class _LoginPageState extends State<LoginPage> with AfterLayoutMixin {
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
+
+    /*return OrientationBuilder(builder: (_, orientation) {
+      return Center(
+        child: Text('$orientation'),
+      );
+    });*/
+
     return Scaffold(
       body: GestureDetector(
         onTap: () {
@@ -39,17 +46,39 @@ class _LoginPageState extends State<LoginPage> with AfterLayoutMixin {
           width: double.infinity,
           height: double.infinity,
           color: Colors.white,
-          child: SingleChildScrollView(
-            child: Container(
-              height: responsive.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Welcome(),
-                  LoginForm(),
-                ],
-              ),
-            ),
+          child: OrientationBuilder(
+            builder: (_, orientation) {
+              if (orientation == Orientation.portrait) {
+                return SingleChildScrollView(
+                  child: Container(
+                    height: responsive.height,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Welcome(),
+                        LoginForm(),
+                      ],
+                    ),
+                  ),
+                );
+              } else {
+                return Row(
+                  children: [
+                    Expanded(
+                      child: Welcome(),
+                    ),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Container(
+                          height: responsive.height,
+                          child: Center(child: LoginForm()),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              }
+            },
           ),
         ),
       ),

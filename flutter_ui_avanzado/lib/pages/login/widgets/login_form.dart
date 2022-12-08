@@ -19,6 +19,7 @@ class LoginForm extends StatelessWidget {
           width: 300,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               /* CupertinoTextField(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
